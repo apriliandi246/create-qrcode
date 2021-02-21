@@ -9,12 +9,12 @@
 
    onMount(() => {
       qrcode = new QRCode(document.getElementById("qrcode"), {
-         text: "https://twitter.com/calon_jenazah__",
          width: 250,
          height: 250,
          colorDark: "#000000",
          colorLight: "#ffffff",
          correctLevel: QRCode.CorrectLevel.H,
+         text: "https://twitter.com/calon_jenazah__",
       });
    });
 
@@ -25,7 +25,7 @@
          downloadButton.href = qrcodeContainer.childNodes[1].src;
       } else {
          qrcode.clear();
-         qrcode.makeCode(qrcodeValue);
+         qrcode.makeCode(event.target.value);
       }
    }
 </script>
@@ -40,8 +40,8 @@
       autocomplete="off"
       spellcheck="false"
       class="input__text"
-      on:input={changeText}
       bind:value={qrcodeValue}
+      on:input={changeText}
       placeholder="your text...."
    />
 
@@ -95,6 +95,7 @@
       width: 100%;
       padding: 12px;
       outline: none;
+      text-indent: 5px;
       margin-top: 60px;
       font-size: 1.3rem;
       border-radius: 6px;
@@ -183,7 +184,7 @@
 
    @media screen and (min-width: 1860px) {
       .container {
-         width: 43%;
+         width: 40%;
       }
    }
 </style>
