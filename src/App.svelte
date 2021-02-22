@@ -9,23 +9,27 @@
 
    onMount(() => {
       qrcode = new QRCode(document.getElementById("qrcode"), {
-         width: 250,
-         height: 250,
+         width: 320,
+         height: 320,
          colorDark: "#000000",
          colorLight: "#ffffff",
          correctLevel: QRCode.CorrectLevel.H,
-         text: "https://twitter.com/calon_jenazah__",
+         text: "https://github.com/apriliandi246",
       });
    });
 
-   function changeText(event) {
+   function changeText() {
       if (qrcodeValue !== "") {
          qrcode.clear();
-         qrcode.makeCode(event.target.value);
+         qrcode.makeCode(qrcodeValue);
          downloadButton.href = qrcodeContainer.childNodes[1].src;
       } else {
          qrcode.clear();
-         qrcode.makeCode(event.target.value);
+         qrcode.makeCode(
+            qrcodeValue === ""
+               ? "https://github.com/apriliandi246"
+               : qrcodeValue
+         );
       }
    }
 </script>
