@@ -9,8 +9,8 @@
 
    onMount(() => {
       qrcode = new QRCode(document.getElementById("qrcode"), {
-         width: 320,
-         height: 320,
+         width: 300,
+         height: 300,
          colorDark: "#000000",
          colorLight: "#ffffff",
          correctLevel: QRCode.CorrectLevel.H,
@@ -83,10 +83,10 @@
    }
 
    #qrcode {
-      width: 94%;
+      width: 95%;
       margin: auto;
       display: flex;
-      padding: 30px;
+      padding: 40px;
       border-radius: 10px;
       justify-content: center;
       border: 3px solid #000000;
@@ -136,6 +136,15 @@
    .download__button:hover {
       transform: translateX(3px);
       box-shadow: 3px 3px 0.6px #000000;
+   }
+
+   @media screen and (max-width: 400px) {
+      #qrcode {
+         width: 100%;
+         padding: 10px;
+         box-shadow: none;
+         border: none;
+      }
    }
 
    @media screen and (min-width: 840px) {
