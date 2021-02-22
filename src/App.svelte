@@ -52,7 +52,7 @@
    {#if qrcodeValue !== ""}
       <a
          href="/#"
-         download="qrcode"
+         download="qrcode.png"
          class="download__button"
          in:scale={{ duration: 300 }}
          out:fade={{ duration: 150 }}
